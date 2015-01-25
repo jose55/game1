@@ -9,14 +9,28 @@ BITMAP* buffer;
 Character myChar;
 
 void Setup(){
+  const char* l1="left1.bmp";
+  const char* l2="left2.bmp";
+  const char* l3="left3.bmp";
+  const char* r1="right1.bmp";
+  const char* r2="right2.bmp";
+  const char* r3="right3.bmp";
+  const char* u1="up1.bmp";
+  const char* u2="up2.bmp";
+  const char* u3="up3.bmp";
+  const char* d1="down1.bmp";
+  const char* d2="down2.bmp";
+  const char* d3="down3.bmp";
 
-     buffer= create_bitmap(640, 480);
-     myChar.SetImagesLeft( "left1.bmp", "left2.bmp", "left3.bmp");
-     myChar.SetImagesRight( "right1.bmp", "right2.bmp", "right3.bmp");
-     myChar.SetImagesUp( "up1.bmp", "up2.bmp", "up3.bmp");
-     myChar.SetImagesDown( "down1.bmp", "down2.bmp", "down3.bmp");
-     
-     myChar.Show( screen);
+
+
+  buffer= create_bitmap(640, 480);
+  myChar.SetImagesLeft( const_cast<char*>(l1),const_cast<char*>(l2),const_cast<char*> (l3));
+  myChar.SetImagesRight(const_cast<char*>(r1),const_cast<char*>(r2),const_cast<char*>(r3));
+  myChar.SetImagesUp(const_cast<char*>(u1), const_cast<char*>(u2),const_cast<char*>(u3) );
+  myChar.SetImagesDown(const_cast<char*>(d1),const_cast<char*>(d2), const_cast<char*>(d3));
+  
+  myChar.Show( screen);
 
 }
 
